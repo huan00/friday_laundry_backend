@@ -15,7 +15,13 @@ module.exports = (sequelize, DataTypes) => {
   }
   Orders.init(
     {
-      customer_id: DataTypes.INTEGER,
+      customer_id: {
+        tyep: DataTypes.INTEGER,
+        references: {
+          model: 'customers',
+          key: 'id'
+        }
+      },
       amount: DataTypes.INTEGER,
       shipping_address: DataTypes.STRING,
       order_email: DataTypes.STRING,

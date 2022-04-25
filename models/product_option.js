@@ -13,8 +13,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product_Option.init(
     {
-      option_id: DataTypes.INTEGER,
-      product_id: DataTypes.INTEGER
+      option_id: {
+        type: DataTypes.INTEGER,
+        references: { model: 'options', key: 'id' }
+      },
+      product_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'products',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
