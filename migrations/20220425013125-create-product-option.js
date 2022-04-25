@@ -9,18 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       option_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'options',
-          key: 'id'
-        }
+        type: Sequelize.INTEGER
       },
       product_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'products',
-          key: 'id'
-        }
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
