@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       product_id: {
-        tyep: DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         references: {
           model: 'products',
           key: 'id'

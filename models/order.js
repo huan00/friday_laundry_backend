@@ -8,15 +8,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Order.hasMany(models.Order_detail, { foreignKey: order_id })
+      Order.hasMany(models.Order_Detail, { foreignKey: 'order_id' })
       Order.belongsTo(models.Customer)
       // define association here
     }
   }
-  Orders.init(
+  Order.init(
     {
       customer_id: {
-        tyep: DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         references: {
           model: 'customers',
           key: 'id'
@@ -34,5 +34,5 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'orders'
     }
   )
-  return Orders
+  return Order
 }
