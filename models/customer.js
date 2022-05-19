@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       billing_address: DataTypes.STRING,
       default_shipping_address: DataTypes.STRING,
       country: DataTypes.STRING,
-      phone: DataTypes.INTEGER
+      phone: DataTypes.STRING
     },
     {
       sequelize,

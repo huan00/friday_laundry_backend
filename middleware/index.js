@@ -10,8 +10,8 @@ const hashPassword = async (password) => {
   return hashedPassword
 }
 
-const comparePassword = async (password, storedPassword) => {
-  let passwordMatch = await bcrypt.compare(password, storedPassword)
+const comparePassword = async (storedPassword, password) => {
+  let passwordMatch = await bcrypt.compare(storedPassword, password)
   return passwordMatch
 }
 
@@ -25,6 +25,7 @@ const verifyToken = (req, res, next) => {
   try {
     let payload = jwt.verify(token, APP_SECRET)
     if (payload) {
+      res.locals.payload = payload
       return next()
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthroized' })

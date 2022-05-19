@@ -19,17 +19,16 @@ const Login = async (req, res) => {
       where: { email: req.body.email },
       raw: true
     })
-    console.log(customer)
     if (
       customer &&
-      (await middleware.comparePassword(req.body.password, customer.password))
+      middleware.comparePassword(customer.password, req.body.password)
     ) {
       let payload = {
         id: customer.id,
         email: customer.email
       }
       let token = middleware.createToken(payload)
-      return res.send({ customer: payload, token })
+      return res.json({ customer: payload, token })
     }
     res.status(401).send({ status: 'Error', msg: 'Unauthorized' })
   } catch (error) {
@@ -37,7 +36,13 @@ const Login = async (req, res) => {
   }
 }
 
+const CheckSession = async (req, res) => {
+  const { payload } = res.locals
+  res.send(payload)
+}
+
 module.exports = {
   RegisterCustomer,
-  Login
+  Login,
+  CheckSession
 }
