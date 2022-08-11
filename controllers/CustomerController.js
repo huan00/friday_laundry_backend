@@ -19,13 +19,16 @@ const Login = async (req, res) => {
       where: { email: req.body.email },
       raw: true
     })
+    console.log(customer)
     if (
       customer &&
       middleware.comparePassword(customer.password, req.body.password)
     ) {
       let payload = {
         id: customer.id,
-        email: customer.email
+        email: customer.email,
+        full_name: customer.full_name,
+        phone: customer.phone
       }
       let token = middleware.createToken(payload)
       return res.json({ customer: payload, token })
