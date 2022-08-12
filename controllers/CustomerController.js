@@ -19,7 +19,6 @@ const Login = async (req, res) => {
       where: { email: req.body.email },
       raw: true
     })
-    console.log(customer)
     if (
       customer &&
       middleware.comparePassword(customer.password, req.body.password)
@@ -28,7 +27,9 @@ const Login = async (req, res) => {
         id: customer.id,
         email: customer.email,
         full_name: customer.full_name,
-        phone: customer.phone
+        phone: customer.phone,
+        billing_address: customer.billing_address,
+        country: customer.country
       }
       let token = middleware.createToken(payload)
       return res.json({ customer: payload, token })
@@ -38,6 +39,8 @@ const Login = async (req, res) => {
     throw error
   }
 }
+
+const updateCustomerInfo = async (req, res) => {}
 
 const CheckSession = async (req, res) => {
   const { payload } = res.locals
