@@ -40,7 +40,58 @@ const Login = async (req, res) => {
   }
 }
 
-const updateCustomerInfo = async (req, res) => {}
+const update = async (req, res) => {
+  const { email, full_name, billing_address, phone, country } = req.body
+
+  try {
+    const customer = await Customer.findOne({ where: { email: email } })
+    if (!customer) {
+      return res.status(404).send({ message: 'No Customer Found!' })
+    }
+    const updatedCustomer = await Customer.update(
+      {
+        full_name: full_name,
+        billing_address: billing_address,
+        phone: phone,
+        country: country
+      },
+      { where: { email: email } }
+    )
+
+    // res.send(updatedCustomer)
+
+    if (updatedCustomer) {
+      const customer = await Customer.findOne({
+        where: { email: email },
+        raw: true
+      })
+      let payload = {
+        id: customer.id,
+        email: customer.email,
+        full_name: customer.full_name,
+        phone: customer.phone,
+        billing_address: customer.billing_address,
+        country: customer.country
+      }
+      let token = middleware.createToken(payload)
+      return res.json({ customer: payload, token })
+    }
+    return res.status(201).json({ message: 'error updating' })
+  } catch (error) {
+    res.send(error)
+  }
+}
+
+const deleteCustomer = async (req, res) => {
+  const { id } = req.params
+  console.log(id)
+  try {
+    await Customer.destroy({ where: { id: parseInt(id) } })
+    return res.json({ message: 'User deleted' })
+  } catch (error) {
+    res.send(error)
+  }
+}
 
 const CheckSession = async (req, res) => {
   const { payload } = res.locals
@@ -50,5 +101,7 @@ const CheckSession = async (req, res) => {
 module.exports = {
   RegisterCustomer,
   Login,
-  CheckSession
+  CheckSession,
+  update,
+  deleteCustomer
 }

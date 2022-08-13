@@ -5,8 +5,10 @@ const middleware = require('../middleware')
 router.get('/info', (req, res) => {
   res.send('got info')
 })
+router.put('/update', controller.update)
 router.post('/signup', controller.RegisterCustomer)
 router.post('/login', controller.Login)
+router.delete('/delete/:id', controller.deleteCustomer)
 router.get(
   '/session',
   middleware.stripToken,
