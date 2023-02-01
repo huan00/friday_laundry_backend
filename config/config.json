@@ -12,9 +12,9 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "friday_laundry",
+    "username": "huancodes",
+    "password": "T6grABl34plfuZejsrBZ7IqfGLs1vmcT",
+    "database": "fridaylaundry",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
