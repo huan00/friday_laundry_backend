@@ -16,7 +16,6 @@
     "password": "AYcMexbDorTEJNcTcC2ARljkAkeCCWBV",
     "database": "fridaylaundry_ep3k",
     "host": "postgres://fridaylaundry_ep3k_user:AYcMexbDorTEJNcTcC2ARljkAkeCCWBV@dpg-cfdbnt9gp3jt880o3mq0-a/fridaylaundry_ep3k",
-    "PORT": "5432",
     "dialect": "postgres"
   }
 }
