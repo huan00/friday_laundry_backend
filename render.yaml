@@ -3,7 +3,7 @@ services:
     name: fl_backend
     env: node
     plan: starter
-    repo: git@github.com:huan00/friday_laundry_backend.git
+    # repo: git@github.com:huan00/friday_laundry_backend.git
     buildCommand: npm install && npx sequelize-cli db:migrate
     startCommand: npm start
     autoDeploy: false
