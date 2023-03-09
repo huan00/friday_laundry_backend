@@ -12,10 +12,10 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "friday_laundry_o0dv_b210_user",
-    "password": "eEcx2n40eI8E79zzKCeNvEOwxaCWWcqj",
-    "database": "friday_laundry_o0dv_b210",
-    "host": "dpg-cg4ili7dvk4n2c7d9b20-a",
+    "username": "fl_database_user",
+    "password": "kn6iMGRQrF7GYVGp2ZC1xxidwIY5C4mC",
+    "database": "fl_database",
+    "host": "dpg-cg4ivo02qv287cpd9140-a",
     "dialect": "postgres"
   }
 }
