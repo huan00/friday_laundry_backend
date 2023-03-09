@@ -1,14 +1,19 @@
 services:
   - type: web
-    name: next-js
+    name: fl_backend
     env: node
     plan: starter
-    buildCommand: yarn; yarn build
-    startCommand: yarn start
+    repo: git@github.com:huan00/friday_laundry_backend.git
+    buildCommand: npm install && npx sequelize-cli db:migrate
+    startCommand: npm start
     autoDeploy: false
     envVars:
       - key: NODE_ENV
         value: production
+      - key: APP_SECRET
+        value: mysecretkey
+      - key: SALT_ROUNDS
+        value: 12
 
 # services:
 #   - type: web
