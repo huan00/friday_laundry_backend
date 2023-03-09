@@ -14,7 +14,7 @@
   "production": {
     "username": "fl_database_user",
     "password": "kn6iMGRQrF7GYVGp2ZC1xxidwIY5C4mC",
-    "database": "fl_database",
+    "database": "fl_database_user",
     "host": "dpg-cg4ivo02qv287cpd9140-a",
     "dialect": "postgres"
   }
