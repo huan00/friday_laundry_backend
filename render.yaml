@@ -1,20 +1,17 @@
-databases: 
-  - name: friday_laundry_o0dv
-  # databaseName: ''
-  # user: ''
-
 
 services:
   - type: pserv
-  name: pgbouncer
+  name: fl_backend
   env: node
-  plan: standard
+  # plan: standard
   repo: git@github.com:huan00/friday_laundry_backend.git
+  buildCommand: npm install && npx sequelize-cli db:migrate
+  startCommand: npm start
   envVars:
-  - key: postgres://friday_laundry_o0dv_user:llJtOtnL6KeoYKySvHT3gXiKnvlFhmb0@dpg-cg351sl269v3bp8gcuag-a/friday_laundry_o0dv
-  fromDatabase:
-    name: ''
-    propperty: ''
+    - key: postgres://friday_laundry_o0dv_user:llJtOtnL6KeoYKySvHT3gXiKnvlFhmb0@dpg-cg351sl269v3bp8gcuag-a/friday_laundry_o0dv
+    fromDatabase:
+      name: friday_laundry_o0dv
+      propperty: ''
   - key: POOL_MODE
       value: transaction
     - key: SERVER_RESET_QUERY
@@ -23,3 +20,9 @@ services:
       value: 500
     - key: DEFAULT_POOL_SIZE
       value: 50
+
+databases: 
+  - name: friday_laundry_o0dv
+  databaseName: friday_laundry_o0dv
+  user: friday_laundry_o0dv_user
+
