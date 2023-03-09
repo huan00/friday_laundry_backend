@@ -1,0 +1,25 @@
+databases: 
+  - name: friday_laundry_o0dv
+  # databaseName: ''
+  # user: ''
+
+
+services:
+  - type: pserv
+  name: pgbouncer
+  env: node
+  plan: standard
+  repo: git@github.com:huan00/friday_laundry_backend.git
+  envVars:
+  - key: postgres://friday_laundry_o0dv_user:llJtOtnL6KeoYKySvHT3gXiKnvlFhmb0@dpg-cg351sl269v3bp8gcuag-a/friday_laundry_o0dv
+  fromDatabase:
+    name: ''
+    propperty: ''
+  - key: POOL_MODE
+      value: transaction
+    - key: SERVER_RESET_QUERY
+      value: DISCARD ALL
+    - key: MAX_CLIENT_CONN
+      value: 500
+    - key: DEFAULT_POOL_SIZE
+      value: 50

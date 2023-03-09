@@ -15,7 +15,7 @@
     "username": "friday_laundry_o0dv_user",
     "password": "llJtOtnL6KeoYKySvHT3gXiKnvlFhmb0",
     "database": "friday_laundry_o0dv",
-    "host": "postgres://friday_laundry_o0dv_user:llJtOtnL6KeoYKySvHT3gXiKnvlFhmb0@dpg-cg351sl269v3bp8gcuag-a/friday_laundry_o0dv",
+    "host": "dpg-cg351sl269v3bp8gcuag-a.ohio-postgres.render.com",
     "dialect": "postgres"
   }
 }
