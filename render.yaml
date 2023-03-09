@@ -1,15 +1,14 @@
 services:
-- type: web
-  name: next-js
-  env: node
-  plan: starter
-  buildCommand: yarn; yarn build
-  startCommand: yarn start
-  autoDeploy: false
-  envVars:
-  - key: NODE_ENV
-    value: production
-
+  - type: web
+    name: next-js
+    env: node
+    plan: starter
+    buildCommand: yarn; yarn build
+    startCommand: yarn start
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
 
 # services:
 #   - type: web
@@ -33,8 +32,10 @@ services:
 #     - key: DEFAULT_POOL_SIZE
 #       value: 50
 
-databases: 
-  - name: friday_laundry_o0dv
-  databaseName: friday_laundry_o0dv
-  user: friday_laundry_o0dv_user
+# databases:
+#   - name: friday_laundry_o0dv
+#     databaseName: friday_laundry_o0dv
+#     user: friday_laundry_o0dv_user
 
+databases:
+  - name: friday_laundry_o0dv
