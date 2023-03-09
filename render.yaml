@@ -14,7 +14,6 @@ services:
         value: mysecretkey
       - key: SALT_ROUNDS
         value: 12
-
 # services:
 #   - type: web
 #   name: fl_backend
@@ -42,5 +41,5 @@ services:
 #     databaseName: friday_laundry_o0dv
 #     user: friday_laundry_o0dv_user
 
-databases:
-  - name: friday_laundry_o0dv
+# databases:
+#   - name: friday_laundry_o0dv
