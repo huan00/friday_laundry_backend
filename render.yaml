@@ -2,7 +2,7 @@ services:
   - type: web
     name: fl_backend
     env: node
-    plan: starter
+    plan: free
     # repo: git@github.com:huan00/friday_laundry_backend.git
     buildCommand: npm install && npx sequelize-cli db:migrate
     startCommand: npm start
@@ -43,4 +43,3 @@ services:
 
 databases:
   - name: friday_laundry
-    version: 14
