@@ -41,5 +41,6 @@ services:
 #     databaseName: friday_laundry_o0dv
 #     user: friday_laundry_o0dv_user
 
-# databases:
-#   - name: friday_laundry_o0dv
+databases:
+  - name: friday_laundry
+    version: 14
