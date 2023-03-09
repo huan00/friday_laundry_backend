@@ -6,6 +6,8 @@ const RegisterCustomer = async (req, res) => {
     const signUpInfo = req.body
     let passwordDigest = await middleware.hashPassword(signUpInfo.password)
     signUpInfo.password = passwordDigest
+
+    console.log(Customer)
     const customer = await Customer.create(signUpInfo)
     res.send(customer)
   } catch (error) {
