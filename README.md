@@ -26,6 +26,10 @@
 - Order
 - Product details
 
+#### Data models
+
+![](./assets/ERD_for_Ecommerce.jpg)
+
 #### Credit
 
 - [Products by https://fakestoreapi.com/](https://fakestoreapi.com/)
